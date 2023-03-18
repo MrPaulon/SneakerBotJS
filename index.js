@@ -7,8 +7,8 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-const URL = 'https://www.nike.com/fr/launch/t/air-pegasus-83-blue-void';
-const size = 'EU 39';
+const URL = 'https://www.nike.com/fr/t/chaussure-air-jordan-1-mid-MsflqZ';
+const size = 'EU 43';
 
 const sizeMatch = {
     'EU 38.5': 1,
@@ -37,8 +37,11 @@ const sizeMatch = {
     await page.setViewport({ width: 1280, height: 800 });
     await page.goto(URL);
     
-    await page.waitForSelector('#cookie-settings-layout > div > div > div > div.ncss-row.mt5-sm.mb7-sm > div:nth-child(2) > button');
-    await page.click('#cookie-settings-layout > div > div > div > div.ncss-row.mt5-sm.mb7-sm > div:nth-child(2) > button');
+
+    await page.waitForSelector("#gen-nav-commerce-header-v2 > div > div > div:nth-child(2) > div > div:nth-child(3)");
+    //await page.waitForSelector("#gen-nav-commerce-header-v2 > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div");
+    console.log(chalk.bold.red('Bot action: Cookies Fund'));
+    await page.click('#gen-nav-commerce-header-v2 > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > button');
     console.log(chalk.bold.red('Bot action: Cookies accepted'));
 
     await page.waitForSelector(`#root > div > div > div.main-layout > div > div.ncss-col-sm-12.full > div.pdp-container.ncss-col-sm-12.full > div > section > div.aside-container.ncss-col-sm-12.ncss-col-lg-4.va-sm-t.pt0-sm.pr7-sm.pb0-sm.pl7-sm.pt12-md.pb12-md.pt0-lg.pb0-lg.pl5-lg.mt5-sm.mb3-sm.mt0-lg.mb0-lg.fixie.is-fixed > aside > div > div:nth-child(2) > div > div.buying-tools-container > ul > li:nth-child(${sizeMatch[size]}) > button`);
