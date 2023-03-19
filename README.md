@@ -1,6 +1,9 @@
 # SneakerBotJS ☢️
 Sneaker Bot Javascript.
 
+Prérequis:
+- NodeJS
+
 ## Run the bot
 
 ### 1.Installer les dépendances
