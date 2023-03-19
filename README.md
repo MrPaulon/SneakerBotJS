@@ -1,4 +1,4 @@
-# SneakerBotJS ☢️
+# SneakerBotJS 👟
 Sneaker Bot Javascript.
 
 Prérequis:
