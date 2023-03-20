@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-const URL = 'https://www.nike.com/fr/t/chaussure-air-jordan-1-mid-MsflqZ';
+const URL = 'https://launches.endclothing.com/product/nike-sb-air-jordan-4-dr5415-103?awc=17184_1679305453_167ea22be84a11d728f0e05da29379f5&utm_source=awin&utm_medium=affiliate&utm_campaign=WhenToCop';
 const size = 'EU 43';
 
 const sizeMatch = {
@@ -31,26 +31,55 @@ const sizeMatch = {
 
 (async () => {
     const browser = await puppeteer.launch({
+        args:[
+            '--start-fullscreen' // you can also use '--start-maximized'
+        ],
         headless: false
     });
     const page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 800 });
     await page.goto(URL);
+
+
+    await page.waitForSelector("button.sc-jqUVSM.lcACLn");
+    console.log(chalk.bold.yellow("Bot action: Cookies Button Fund"));
+    await page.click("button.sc-jqUVSM.lcACLn")
+    console.log(chalk.bold.green("Bot action: Cookies Accepted"));
+
+    console.log("----------------------")
+
+    await page.waitForSelector("button.sc-4czj8x-1.iNcgGu");
+    console.log(chalk.bold.yellow("Bot action: Button fund"));
+    await page.click("button.sc-4czj8x-1.iNcgGu");
+    console.log(chalk.bold.yellow("Bot action: Draw Button Clicked"));
+
+    console.log("----------------------")
+
+    await page.waitForSelector("input#email");
+    await page.focus("input#email");
+    await page.keyboard.type("paulnantou@gmail.com");
+
+    await page.waitForSelector("button.sc-4czj8x-1.iNcgGu.sc-1vpyvai-2.iaTzbf");
+    console.log(chalk.bold.yellow("Bot action: Button fund"));
+    await page.click("button.sc-4czj8x-1.iNcgGu.sc-1vpyvai-2.iaTzbf");
+    console.log(chalk.bold.green("Bot action: Button Clicked"));
     
 
-    await page.waitForSelector("#gen-nav-commerce-header-v2 > div > div > div:nth-child(2) > div > div:nth-child(3)");
+
+    //await page.waitForSelector("#hf_cookie_text_cookieAccept");
+    //await page.waitForSelector("#gen-nav-commerce-header-v2 > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > button");
     //await page.waitForSelector("#gen-nav-commerce-header-v2 > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div");
-    console.log(chalk.bold.red('Bot action: Cookies Fund'));
-    await page.click('#gen-nav-commerce-header-v2 > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > button');
-    console.log(chalk.bold.red('Bot action: Cookies accepted'));
+    //console.log(chalk.bold.red('Bot action: Cookies Fund'));
+    //await page.click('#gen-nav-commerce-header-v2 > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > button');
+    //await page.click("#hf_cookie_text_cookieAccept");
+    //console.log(chalk.bold.red('Bot action: Cookies accepted'));
 
-    await page.waitForSelector(`#root > div > div > div.main-layout > div > div.ncss-col-sm-12.full > div.pdp-container.ncss-col-sm-12.full > div > section > div.aside-container.ncss-col-sm-12.ncss-col-lg-4.va-sm-t.pt0-sm.pr7-sm.pb0-sm.pl7-sm.pt12-md.pb12-md.pt0-lg.pb0-lg.pl5-lg.mt5-sm.mb3-sm.mt0-lg.mb0-lg.fixie.is-fixed > aside > div > div:nth-child(2) > div > div.buying-tools-container > ul > li:nth-child(${sizeMatch[size]}) > button`);
-    await page.click(`#root > div > div > div.main-layout > div > div.ncss-col-sm-12.full > div.pdp-container.ncss-col-sm-12.full > div > section > div.aside-container.ncss-col-sm-12.ncss-col-lg-4.va-sm-t.pt0-sm.pr7-sm.pb0-sm.pl7-sm.pt12-md.pb12-md.pt0-lg.pb0-lg.pl5-lg.mt5-sm.mb3-sm.mt0-lg.mb0-lg.fixie.is-fixed > aside > div > div:nth-child(2) > div > div.buying-tools-container > ul > li:nth-child(${sizeMatch[size]}) > button`);
-    console.log(chalk.bold.red(`Bot action: Size ${size} selected`));
+    //await page.waitForSelector(`#root > div > div > div.main-layout > div > div.ncss-col-sm-12.full > div.pdp-container.ncss-col-sm-12.full > div > section > div.aside-container.ncss-col-sm-12.ncss-col-lg-4.va-sm-t.pt0-sm.pr7-sm.pb0-sm.pl7-sm.pt12-md.pb12-md.pt0-lg.pb0-lg.pl5-lg.mt5-sm.mb3-sm.mt0-lg.mb0-lg.fixie.is-fixed > aside > div > div:nth-child(2) > div > div.buying-tools-container > ul > li:nth-child(${sizeMatch[size]}) > button`);
+    //await page.click(`#root > div > div > div.main-layout > div > div.ncss-col-sm-12.full > div.pdp-container.ncss-col-sm-12.full > div > section > div.aside-container.ncss-col-sm-12.ncss-col-lg-4.va-sm-t.pt0-sm.pr7-sm.pb0-sm.pl7-sm.pt12-md.pb12-md.pt0-lg.pb0-lg.pl5-lg.mt5-sm.mb3-sm.mt0-lg.mb0-lg.fixie.is-fixed > aside > div > div:nth-child(2) > div > div.buying-tools-container > ul > li:nth-child(${sizeMatch[size]}) > button`);
+    //console.log(chalk.bold.red(`Bot action: Size ${size} selected`));
 
-    await page.waitForSelector('button.ncss-btn-primary-dark');
-    await page.click('button.ncss-btn-primary-dark');
-    console.log(chalk.bold.red('Bot action: Shoes added to cart'));
+    //await page.waitForSelector('button.ncss-btn-primary-dark');
+    //await page.click('button.ncss-btn-primary-dark');
+    //console.log(chalk.bold.red('Bot action: Shoes added to cart'));
     
     
     
