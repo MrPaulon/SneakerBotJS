@@ -8,7 +8,7 @@ Prérequis:
 
 ### 1.Installer les dépendances
 
-```npm install```
+```npm install --force```
 
 ### 2.Start le bot
 
