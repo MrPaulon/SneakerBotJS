@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-const URL = 'https://launches.endclothing.com/product/nike-sb-air-jordan-4-dr5415-103?awc=17184_1679305453_167ea22be84a11d728f0e05da29379f5&utm_source=awin&utm_medium=affiliate&utm_campaign=WhenToCop';
+const URL = 'https://launches.endclothing.com/product/nike-air-max-1-87-w-fd0827-133';
 const size = 'EU 43';
 
 const sizeMatch = {
@@ -57,6 +57,8 @@ const sizeMatch = {
     await page.waitForSelector("input#email");
     await page.focus("input#email");
     await page.keyboard.type("paulnantou@gmail.com");
+
+    await page.focus("body");
 
     await page.waitForSelector("button.sc-4czj8x-1.iNcgGu.sc-1vpyvai-2.iaTzbf");
     console.log(chalk.bold.yellow("Bot action: Button fund"));
