@@ -12,6 +12,10 @@ Prérequis:
 
 ### 2.Start le bot
 
+```node index```
+
+OR
+
 ```npm run startBot```
 
 ## NPM Packages
