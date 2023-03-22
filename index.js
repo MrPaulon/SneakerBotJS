@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-const URL = 'https://launches.endclothing.com/product/nike-air-max-1-87-w-fd0827-133';
+const URL = 'https://launches.endclothing.com/product/nike-x-off-white-air-force-1-mid-dr0500-300';
 const size = 'EU 43';
 
 const sizeMatch = {
